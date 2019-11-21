@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="row">
+  	<div class="user_info" class="col-md-3">
+  	  <h2>User info</h2>
+
+  	  <%= form_for(@user) do |f| %>
+
+  	  <!-- エラーメッセージ -->
+  	  <% if @user.errors.any? %>
+  	  <div id="error_explanation">
+  	  	<div class="alert alert-danger">
+  	      <h3><%= @user.errors.count %>error prohibited this obj from being saved:</h3>
+  	      <ul>
+  	      	<%= @user.errors.full_messages.each do |message| %>
+  	      	  <li><%= message %></li>
+  	      	<% end %>
+  	      </ul>
+  	    </div>
+  	  </div>
+  	  <% end %>
+
+      <!-- フォーム部分 -->
+  	  <div class="row">
+  	  	<p>
+  	  	  <%= f.label :name, "Name" %>
+  	  	  <%= f.text_field :name, class: "name" %>
+  	  	</p>
+  	  </div>
+  	  <div class="row">
+  	  	<p>
+  	  	  <%= f.label :profile_image, "Image" %>
+  	  	  <%= f.attachment_field :profile_image, class: "user_image" %>
+  	  	</p>
+  	  </div>
+  	  <div class="row">
+  	  	<p>
+  	  	  <%= f.label :introduction, "Introduction" %>
+  	  	  <%= f.text_area :introduction, class: "introduction" %>
+  	  	</p>
+  	  </div>
+  	  <div class="row">
+  	  	<p>
+  	  	  <%= f.submit "Update User", class: "btn btn-sm" %>
+        </p>
+      </div>
+  	  <% end %>
+
+  	</div>
+
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+  	<div class="col-md-3"></div>
+  	<div class="col-md-6"></div>
+  	<div class="col-md-3">
+  	  <p>CopyRight Infratop.inc</p>
+  	</div>
+  </div>
+</div>

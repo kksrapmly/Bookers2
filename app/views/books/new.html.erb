@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    
+    <%= render 'books/list', book: @book, user: @user %>
+
+    <!-- 右カラム -->
+  	<div class="main-list col-md-9">
+  	  <div class="books">
+  	  	<h2>Books</h2>
+  	  	 <table class="table">
+  	  	   <thead>
+  	  	   	 <tr>
+  	  	   	 	<th class="col-md-1"></th>
+              <th class="col-md-2">
+  	  	   	 	<th class="col-md-4">Title</th>
+  	  	   	 	<th class="col-md-4">Opinion</th>
+  	  	   	 	<th class="col-md-1"></th>
+  	  	   	 </tr>
+  	  	   </thead>
+  	  	   <% @books.each do |books| %>
+  	  	     <tbody>
+  	  	       <tr>
+  	  	         <td><%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg", class: "img-responsive" %></td>
+                 <td></td>
+  	  	         <td><%= link_to books.title, book_path(books.id), class: "book_#{books.id}" %></td>
+  	  	         <td><%= books.body %></td>
+  	  	       </tr>
+  	  	     </tbody>
+  	  	   <% end %>
+  	  	 </table>
+  	  </div>
+  	</div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+  	<div class="col-md-3"></div>
+  	<div class="col-md-6"></div>
+  	<div class="col-md-3">
+  	  <p>CopyRight Infratop.inc</p>
+  	</div>
+  </div>
+</div>

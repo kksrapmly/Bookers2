@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="row">
+  	<div class="col-md-3"></div>
+  	<div class="col-md-6">
+  	  <h1>Editing Book</h1>
+  	  <%= form_for(@book) do |f| %>
+
+
+      <!-- エラーメッセージ -->
+      <% if @book.errors.any? %>
+      <div id="error_explanation">
+        <div class="alert alert-danger">
+          <h3><%= @book.errors.count %>error prohibited this obj from being saved:</h3>
+          <ul>
+            <%= @book.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+      <% end %>
+
+  	  <div class="row">
+        <p>
+  	  	  <%= f.label :title, "Title" %>
+  	  	  <%= f.text_field :title, class: "book_title col-md-12" %>
+        </p>
+  	  </div>
+      <p></p>
+      <div class="row">
+        <p>
+          <%= f.label :body, "Opinion" %>
+          <%= f.text_area :body, class: "book_body col-md-12" %>
+        </p>
+      </div>
+      <p></p>
+      <div class="row">
+        <p>
+          <%= f.submit "Update Book", class: "btn btn-block btn-primary" %>
+        </p>
+      </div>
+        <% end %>
+  	</div>
+    <div class="col-md-3"></div>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <%= link_to "Show", book_path(@book.id), class: "book_#{@book.id}" %>
+      <span>|</span>
+      <%= link_to "Back", books_path, class: "back" %>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6"></div>
+    <div class="col-md-3">
+      <p>CopyRight Infratop.inc</p>
+    </div>
+  </div>
+</div>
