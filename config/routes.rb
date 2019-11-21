@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
 
   get '/'  => 'root#top'
-  get '/about' => 'root#about'
+  get 'home/about' => 'root#about'
   root 'root#top'
 
 

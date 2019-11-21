@@ -100,7 +100,7 @@ RSpec.feature "Homeページ、サインアップ、ログイン、ログアウ�
     scenario "ログアウト時" do
       visit root_path
       expect(page).to have_link "",href: root_path
-      expect(page).to have_link "",href: "/about"
+      expect(page).to have_link "",href: "/home/about"
       expect(page).to have_link "",href: new_user_session_path
       expect(page).to have_link "",href: new_user_registration_path
     end
